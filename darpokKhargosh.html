@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कहानी और प्रश्नोत्तरी</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .story {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .question {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .option-button {
+            display: block;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+        .option-button:hover {
+            background-color: #e9e9e9;
+        }
+        .option-button.correct {
+            background-color: #c8e6c9;
+        }
+        .option-button.incorrect {
+            background-color: #ffcdd2;
+        }
+        #report {
+            margin-top: 30px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2196F3;
+            color: white;
+            cursor: pointer;
+        }
+        #report:hover {
+            background-color: #1976D2;
+        }
+        #result-summary {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h2> डरपोक ख़रगोश </h2>
+    <img src="https://nbahmania.github.io/images/darpok_khargosh.webp" alt="डरपोक ख़रगोश" style="width:450px;height:400px;">
+    <div class="story">
+        एक बार की बात है, एक जंगल में एक डरपोक ख़रगोश रहता था । वह जरा जरा सी आवाज पर भी बहुत ज्यादा डर जाया करता था । एक दिन वह ख़रगोश एक आम के पेड़ के नीचे मजे से सो रहा था । तभी उस पेड़ से एक पका हुआ आम टूट कर नीचे गिर गया । आम के नीचे गिरने की आवाज़ सुन कर ख़रगोश नींद से जाग गया और डर के मारे भागने लगा । उसे भागता देख कर एक हिरण ने पूछा कि तुम भाग क्यों रहे हो? ख़रगोश बोला कि आसमान गिर रहा है और मैं अपनी जान बचा के भाग रहा हूँ । यह सुन कर हिरण भी डर गया और वो भी खरगोश के साथ-साथ भागने लगा । उन्हें भागता देख कर एक भालू ने भी पूछा कि तुम दोनो क्यों भाग रहे हो । वो बोले कि आसमान गिरा, भागो! आसमान गिरा, भागो! । भालू भी उनके साथ भागने लगा । फिर भागते हुए उनको एक लोमड़ी, हाथी, बकरी, गधा और एक भैंसा भी मिला और सब मिल कर आसमान गिरा, आसमान गिरा, भागो! भागो! बोल कर भागने लगे । कुछ समय बाद जंगल के सारे जानवर डर कर भागने लगे । जंगल में शोर सुन कर जंगल के राजा शेर ने भागते हुए जानवरों को रोका और उनसे पूछा कि तुम सब क्यों भाग रहे हो? जानवरों ने बोला कि हम सब तो अपनी जान बचा कर भाग रहे हैं क्योंकि आसमान गिर रहा है । शेर ने पूछा कि किसने बोला कि आसमान गिर रहा है। जनवारों ने आपस में बात की और बताया कि खरगोश ने सबसे पहले बोला था । शेर ने खरगोश से पूछा तो खरगोश बोला कि जब वह सो रहा था तब आसमान गिरने की बहुत तेज आवाज आई और वो भगने लगा । शेर ने बोला कि मुझे वहां ले चलो जहां तुम सो रहे थे । खरगोश सभी जानवरों को उसी आम के पेड़ के नीचे ले आया जहां वो सो रहा था । शेर ने वहाँ एक पके हुए आम को सतह​ पर गिरा हुआ देखा तो वह सब समझ गया। उसने बोला कि आवाज़ आसमान गिरने की नहीं थी, वो तो इस पके हुए आम के गिरने की थी जिससे ख़रगोश डर गया था। शेर की बात सुन कर सब जानवर भी समझ गए और हंसने लगे । कहानी की शिक्षा - कोई भी काम डर से ना करें ।
+    </div>
+
+    <div id="quiz">
+        <div class="question">
+            1. ख़रगोश क्यों डरता था?
+        </div>
+        <ul class="options">
+            <li><button class="option-button" onclick="checkAnswer(this, true)">उसे हर छोटी सी आवाज़ से डर लगता था</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">वह बहुत साहसी था</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">वह हमेशा भागता रहता था</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">उसे अंधेरे से डर लगता था</button></li>
+        </ul>
+
+        <div class="question">
+            2. ख़रगोश कहाँ सो रहा था?
+        </div>
+        <ul class="options">
+            <li><button class="option-button" onclick="checkAnswer(this, true)">आम के पेड़ के नीचे</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">नदी के किनारे</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">अपने घर में</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">झाड़ी के पीछे</button></li>
+        </ul>
+
+        <div class="question">
+            3. आम के गिरने से क्या हुआ?
+        </div>
+        <ul class="options">
+            <li><button class="option-button" onclick="checkAnswer(this, false)">पेड़ गिर गया</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, true)">ख़रगोश डर कर भागने लगा</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">ख़रगोश ने आम खा लिया</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">जानवर खेलने लगे</button></li>
+        </ul>
+
+        <div class="question">
+            4. ख़रगोश ने हिरण से क्या कहा?
+        </div>
+        <ul class="options">
+            <li><button class="option-button" onclick="checkAnswer(this, true)">आसमान गिर रहा है</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">शेर आ रहा है</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">बारिश होने वाली है</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">हमें आम खाना चाहिए</button></li>
+        </ul>
+
+        <div class="question">
+            5. आसमान गिरने की बात सुनकर कौन-कौन भागने लगे?
+        </div>
+        <ul class="options">
+            <li><button class="option-button" onclick="checkAnswer(this, false)">सिर्फ ख़रगोश और हिरण</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, true)">हिरण, भालू, लोमड़ी और बाकी जानवर</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">शेर और बकरी</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">सब जानवर जंगल छोड़कर भाग गए</button></li>
+        </ul>
+
+        <div class="question">
+            6. शेर ने जानवरों से क्या पूछा?
+        </div>
+        <ul class="options">
+            <li><button class="option-button" onclick="checkAnswer(this, false)">खाना खाया?</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">कौन रो रहा है?</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, true)">तुम सब क्यों भाग रहे हो?</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">पेड़ क्यों हिल रहा है?</button></li>
+        </ul>
+
+        <div class="question">
+            7.  शेर ने ख़रगोश को क्या बताया?
+        </div>
+        <ul class="options">
+            <li><button class="option-button" onclick="checkAnswer(this, false)">उसने आम खाया</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, true)">आम के गिरने की आवाज़ को आसमान गिरने की आवाज़ समझा</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">उसने भालू को डराया</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">उसने नदी देखी</button></li>
+        </ul>
+
+        <div class="question">
+            8. शेर ने जानवरों को क्या समझाया?
+        </div>
+        <ul class="options">
+            <li><button class="option-button" onclick="checkAnswer(this, false)">जंगल में मत भागो</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, true)">हर आवाज़ से डरना ठीक नहीं</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">आसमान गिर सकता है</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">ख़रगोश को डांट दिया</button></li>
+        </ul>
+
+        <div class="question">
+            9. आम गिरने की आवाज़ से जानवरों को क्या सीख मिली?
+        </div>
+        <ul class="options">
+            <li><button class="option-button" onclick="checkAnswer(this, true)">डर से कोई काम मत करो</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">आवाज़ सुनकर हमेशा भागो</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">आम खाओ और खुश रहो</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">पेड़ से दूर रहो</button></li>
+        </ul>
+
+        <div class="question">
+            10. कहानी की शिक्षा क्या है?
+        </div>
+        <ul class="options">
+            <li><button class="option-button" onclick="checkAnswer(this, true)">हमें डर के कारण सोच-समझ कर काम करना चाहिए</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">हमेशा शेर की बात सुनो</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)">आम के पेड़ के नीचे मत सोओ</button></li>
+            <li><button class="option-button" onclick="checkAnswer(this, false)"> जंगल में अकेले मत रहो</button></li>
+        </ul>
+
+        <!-- Add more questions here following the same structure -->
+
+        <button id="report" onclick="generateReport()">Generate Report</button>
+        <div id="result-summary"></div>
+    </div>
+
+    <script>
+        let correctAnswers = 0;
+        let totalQuestions = 10; // Update this as you add more questions
+
+        function checkAnswer(button, isCorrect) {
+            const buttons = button.parentElement.querySelectorAll('.option-button');
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (isCorrect) {
+                button.classList.add('correct');
+                correctAnswers++;
+            } else {
+                button.classList.add('incorrect');
+            }
+        }
+
+        function generateReport() {
+            const resultSummary = document.getElementById('result-summary');
+            resultSummary.textContent = `आपने ${correctAnswers} / ${totalQuestions} सही उत्तर दिए हैं।`;
+            resultSummary.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
