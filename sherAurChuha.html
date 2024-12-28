@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कहानी और प्रश्नोत्तरी</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .story {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .question {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .option-button {
+            display: block;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+        .option-button:hover {
+            background-color: #e9e9e9;
+        }
+        .option-button.correct {
+            background-color: #c8e6c9;
+        }
+        .option-button.incorrect {
+            background-color: #ffcdd2;
+        }
+        #report {
+            margin-top: 30px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2196F3;
+            color: white;
+            cursor: pointer;
+        }
+        #report:hover {
+            background-color: #1976D2;
+        }
+        #result-summary {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h2> शेर और चूहा </h2>
+    <img src="https://nbahmania.github.io/images/lionAndMouse.webp" alt="शेर और चूहा" style="width:450px;height:400px;">
+    <div class="story">
+        एक जंगल में एक बड़ा और ताकतवर शेर रहता था। शेर को अपनी ताकत पर बहुत घमंड था। एक दिन, शेर गहरी नींद में सो रहा था। अचानक, एक छोटा सा चूहा वहाँ आ गया और खेलते-खेलते शेर के ऊपर चढ़ गया। 
+
+शेर की नींद टूट गई और उसने गुस्से में चूहे को अपने पंजे में पकड़ लिया। शेर गरजते हुए बोला, "तुमने मेरी नींद खराब की! अब मैं तुम्हें खा जाऊँगा।"
+
+डरा हुआ चूहा काँपते हुए बोला, "महाराज, मुझे माफ कर दीजिए। मैं बहुत छोटा और बेकार सा जानवर हूँ। मुझे छोड़ दीजिए। एक दिन मैं आपकी मदद जरूर करूँगा।"
+
+शेर यह सुनकर हँस पड़ा और बोला, "तू? मेरी मदद करेगा? तुझ जैसे छोटे जीव की मेरी कोई मदद नहीं चाहिए।"
+लेकिन शेर ने चूहे पर दया दिखाते हुए उसे छोड़ दिया।
+
+कुछ दिन बाद, शेर जंगल में घूमते हुए शिकारी के जाल में फँस गया। शेर ने जाल से निकलने की बहुत कोशिश की, लेकिन असफल रहा। वह जोर-जोर से दहाड़ने लगा।
+
+शेर की दहाड़ सुनकर वही छोटा चूहा वहाँ आया। उसने शेर से कहा, "महाराज, चिंता मत कीजिए। मैं आपकी मदद करता हूँ।"
+चूहे ने अपने छोटे-छोटे दाँतों से जाल को काटना शुरू कर दिया। थोड़ी ही देर में जाल टूट गया और शेर आज़ाद हो गया।
+
+शेर ने चूहे का धन्यवाद किया और कहा, "मैंने सोचा था कि तू छोटा है, तू मेरी मदद नहीं कर सकता। लेकिन आज तुमने मेरी जान बचाई। अब मैं समझ गया कि मदद करने वाला छोटा हो या बड़ा, उससे फर्क नहीं पड़ता।"
+
+चूहा और शेर दोनों अच्छे दोस्त बन गए और खुशी-खुशी जंगल में रहने लगे।
+<br></br>
+कहानी से सीख:
+छोटा या बड़ा कोई भी हो, हर किसी की मदद की जरूरत पड़ सकती है। हमें सबके साथ दयालु और विनम्र रहना चाहिए।
+    </div>
+
+<div id="quiz">
+    <div class="question">
+        1. शेर क्यों परेसान था?
+    </div>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false)">वह सो रहा था।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true)">वह शिकारी के जाल में फंस गया।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">वह चूहे का पीछा कर रहा था।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">वह गड्ढे में गिर गया।</button></li>
+    </ul>
+
+    <div class="question">
+        2. शेर की मदद किसने की?
+    </div>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false)">एक और शेर ने।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true)">एक चूहे ने।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">एक पक्षी ने।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">एक हिरण ने।</button></li>
+    </ul>
+
+    <div class="question">
+        3. चूहे ने शेर को आज़ाद करने के लिए क्या किया?
+    </div>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false)">गड्ढा खोदा।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true)">जाल को कुतर दिया।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">शिकारी को बुलाया।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">जाल खींचा।</button></li>
+    </ul>
+
+    <div class="question">
+        4. शेर को आज़ाद होने के बाद कैसा महसूस हुआ?
+    </div>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false)">गुस्सा।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true)">आभारी।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">डर।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">उदास।</button></li>
+    </ul>
+
+    <div class="question">
+        5. यह कहानी हमें क्या सिखाती है?
+    </div>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, true)">मदद के लिए आकार मायने नहीं रखता।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">केवल ताकतवर मदद कर सकते हैं।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">हमेशा शिकारियों से डरना चाहिए।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">चूहों पर कभी भरोसा नहीं करना चाहिए।</button></li>
+    </ul>
+
+    <div class="question">
+        6. शेर कहां फंसा था?
+    </div>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false)">पानी में।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">पेड़ के नीचे।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true)">शिकारी के जाल में।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">गुफा में।</button></li>
+    </ul>
+
+    <div class="question">
+        7. चूहे का ध्यान किस आवाज़ से गया?
+    </div>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, true)">शेर की दहाड़।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">शिकारी की आवाज़।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">जाल टूटने की आवाज़।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">पक्षियों की चहचहाहट।</button></li>
+    </ul>
+
+    <div class="question">
+        8. चूहे ने कौन सी खूबी दिखाई?
+    </div>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false)">ताकत।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">बुद्धिमानी।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">बहादुरी।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true)">उपरोक्त सभी।</button></li>
+    </ul>
+
+    <div class="question">
+        9. शुरुआत में शेर ने चूहे को गंभीरता से क्यों नहीं लिया?
+    </div>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, true)">उसे लगा कि चूहा मदद करने के लिए बहुत छोटा है।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">उसे चूहे पसंद नहीं थे।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">वह जल्दी में था।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">वह सो रहा था।</button></li>
+    </ul>
+
+    <div class="question">
+        10. चूहे ने जाल को कुतरने के लिए क्या इस्तेमाल किया?
+    </div>
+    <ul class="options">
+        <li><button class="option-button" onclick="checkAnswer(this, false)">चाकू।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, true)">अपने तेज़ दांत।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">कैंची।</button></li>
+        <li><button class="option-button" onclick="checkAnswer(this, false)">अपने पंजे।</button></li>
+    </ul>
+</div>
+
+        <!-- Add more questions here following the same structure -->
+
+        <button id="report" onclick="generateReport()">Generate Report</button>
+        <div id="result-summary"></div>
+    </div>
+
+    <script>
+        let correctAnswers = 0;
+        let totalQuestions = 10; // Update this as you add more questions
+
+        function checkAnswer(button, isCorrect) {
+            const buttons = button.parentElement.querySelectorAll('.option-button');
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (isCorrect) {
+                button.classList.add('correct');
+                correctAnswers++;
+            } else {
+                button.classList.add('incorrect');
+            }
+        }
+
+        function generateReport() {
+            const resultSummary = document.getElementById('result-summary');
+            resultSummary.textContent = `आपने ${correctAnswers} / ${totalQuestions} सही उत्तर दिए हैं।`;
+            resultSummary.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
